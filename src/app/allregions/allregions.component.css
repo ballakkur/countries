@@ -1,0 +1,10 @@
+.country-card {
+    max-width: 400px;
+    margin: 30px;
+  }
+
+.now
+{
+    display: flex;
+    flex-wrap: wrap;
+}  

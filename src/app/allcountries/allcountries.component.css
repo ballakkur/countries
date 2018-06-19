@@ -1,0 +1,28 @@
+.country-card {
+    max-width: 300px;
+    margin: 40px;
+  }
+  .position
+  {
+      margin-left: 30vmax;
+      margin-top: 10vmax;
+  }
+  .link
+  {
+      cursor: pointer;
+  }
+  .link:hover
+  {
+      font-size: 16px;
+      color: blue;
+  }
+  
+  .country-header-image {
+    /* background-image: url('src/assets/asia.png'); */
+    background-size: cover;
+  }
+  .now
+  {
+      display: flex;
+      flex-wrap: wrap;
+  }    

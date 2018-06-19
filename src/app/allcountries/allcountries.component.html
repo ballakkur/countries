@@ -1,0 +1,40 @@
+<div style="padding: 10px">
+    <button mat-raised-button (click)="getback()" color="primary">Back</button>
+</div>
+<div class="position" *ngIf="isloading" >
+<mat-spinner  mode="indeterminate" *ngIf="isloading" ></mat-spinner>
+</div> 
+<div class="now" *ngIf = "!isloading" >
+    <mat-card class="country-card" *ngFor="let country of countries">
+        <mat-card-header>
+            <div mat-card-avatar style="background-image:url('assets/asia.png');background-size:cover"></div>
+            <mat-card-title>{{country.name}}</mat-card-title>
+            <mat-card-subtitle>{{region}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{country.flag}}" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+
+            <ul>
+                <li>
+                    {{country.subregion}}
+
+                </li>
+                <hr>
+                <li>
+                    language:<span (click) = "filterByLanguage(language.iso639_2)"
+                    *ngFor="let language of country.languages;
+                    let last = last" class="link" >{{language.name}}{{last ? '':','}}</span> 
+                </li>
+                <hr>
+                <li>
+                    Currencies:<span (click)="filterByCurrency(currency.code)"
+        *ngFor="let currency of country.currencies;
+       let last = last" class="link">{{currency.name}}{{last ? '':','}}</span>
+                </li>
+            </ul>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button [routerLink]="['/country',country.name]" color="primary">VIEW</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

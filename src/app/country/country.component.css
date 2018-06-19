@@ -1,0 +1,32 @@
+.position
+{
+    margin-left: 30vmax;
+    margin-top: 10vmax;
+}
+.link
+{
+    cursor: pointer;
+}
+.link:hover
+{
+    font-size: 16px;
+    color: blue;
+}
+
+/* .flag
+{
+    height: 200px;
+  padding: 10px;
+  background-color: blue;
+  overflow:hidden;
+}
+.flag img{
+    position:absolute;
+    z-index:0;
+    height:200px;
+    margin:-10px;
+}
+.flag h1,.flag h2{
+    position:relative;
+    z-index:1;
+} */

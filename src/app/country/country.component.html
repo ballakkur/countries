@@ -1,0 +1,63 @@
+<div class="position" *ngIf="isloading">
+  <mat-spinner mode="indeterminate" *ngIf="isloading"></mat-spinner>
+</div>
+<mat-card class="flag" *ngIf="info">
+
+  <img mat-card-image src="{{info[0].flag}}" alt="{{info.name}}">
+  <mat-card-title> {{info[0].name}} </mat-card-title>
+  <mat-card-content *ngFor="let property of info">
+    <hr>
+    <h4>
+      AltSpellings:{{property.altSpellings}}
+    </h4>
+    <hr>
+    <h4>
+      Area: {{property.area}}
+    </h4>
+    <hr>
+    <h4>
+      Borders: {{property.borders}}
+    </h4>
+    <hr>
+    <h4>
+      Currencies:
+      <span class="link" [routerLink]="['/countries',currency.code]" [queryParams]="{ 'currency' : currency.code}"
+        *ngFor="let currency of property.currencies;
+       let last = last">{{currency.name}}{{last ? '':','}}</span>
+    </h4>
+    <hr>
+    <h4>
+      Languages:
+      <span class="link" [routerLink]="['/countries',language.iso639_2]" [queryParams]="{ 'language' : language.iso639_2}"
+        *ngFor="let language of property.languages;
+         let last = last">{{language.name}}{{last ? '': ','}}</span>
+    </h4>
+    <hr>
+    <h4>
+      RegionalBlocs:
+      <span *ngFor="let regionblock of property.regionalBlocs;
+         let last = last">{{regionblock.name}}{{last ? '': ','}}</span>
+    </h4>
+    <hr>
+    <h4>
+      CallingCodes: {{property.callingCodes}}
+    </h4>
+    <hr>
+    <h4>
+      Population: {{property.population}}
+    </h4>
+    <hr>
+    <h4>
+      Native name: {{property.nativeName}}
+    </h4>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="getBack()" color="primary">BACK</button>
+  </mat-card-actions>
+</mat-card>
+
+<!-- <div  class="flag" *ngIf ="info">
+    <img src="{{info[0].flag}}" class="flag-bg">
+    <h1 class="heading">Article Heading</h1>
+    <h2 class="author">Author Name</h2>
+ </div> -->

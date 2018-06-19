@@ -1,0 +1,12 @@
+<div class="now">
+  <mat-card class="country-card" *ngFor="let region of regions">
+    <mat-card-header>
+      <mat-card-title>{{region| uppercase }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/{{region}}.png" alt="{{region | uppercase}} region">
+
+    <mat-card-actions>
+      <button mat-raised-button [routerLink] = "['/countries',region]" color="primary">VIEW</button>
+    </mat-card-actions>
+  </mat-card>
+  </div>

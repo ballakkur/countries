@@ -1,0 +1,14 @@
+.background
+{
+    height: 90vh;
+    background-image: url("/assets/desert.jpg");
+    background-size: cover;
+    z-index: 0;
+}
+.background h1{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 50px;
+    z-index: 1;
+}
